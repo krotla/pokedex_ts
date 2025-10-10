@@ -1,0 +1,29 @@
+{
+  "name": "pokedex_ts",
+  "version": "1.0.0",
+  "description": "CLI Pokedex client for PokeAPI in TypeScript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tsc && node dist/main.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krotla/pokedex_ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krotla/pokedex_ts/issues"
+  },
+  "homepage": "https://github.com/krotla/pokedex_ts#readme",
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.9.3"
+  }
+}
