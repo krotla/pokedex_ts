@@ -1,14 +1,11 @@
 // import process from "process"
 
 import { createInterface } from 'node:readline';
+import { CLICommand } from './command.js';
 import { commandExit } from './cmd_exit.js';
 import { commandHelp } from './cmd_help.js';
 
-export type CLICommand = {
-  name: string;
-  description: string;
-  callback: (commands: Record<string, CLICommand>) => void;
-};
+
 
 const rl = createInterface({
   input: process.stdin,
