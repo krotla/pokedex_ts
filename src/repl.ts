@@ -1,9 +1,9 @@
 import { createInterface } from 'node:readline';
 import { CLICommand, State } from './state.js';
 
-export function startREPL(state: State) {
+export async function startREPL(state: State) {
     state.readline.prompt();
-    state.readline.on("line", (line) => {
+    state.readline.on("line", async (line) => {
         const words = cleanInput(line);
         if (words.length === 0) {
             state.readline.prompt();
@@ -20,7 +20,7 @@ export function startREPL(state: State) {
         }
 
         try {
-            cmd.callback(state);
+            await cmd.callback(state);
         } catch (e) {
             console.log(e);
         }
