@@ -29,7 +29,7 @@ export function initState(): State {
     return {
         readline: rl,
         commands: cmds,
-        pokeAPI: new PokeAPI(),
+        pokeAPI: new PokeAPI(30000),
         nextLocationsURL: null,
         prevLocationsURL: null,
     }; 
