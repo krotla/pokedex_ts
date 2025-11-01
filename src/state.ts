@@ -1,13 +1,15 @@
 import { createInterface, type Interface } from "readline";
+import { PokeAPI } from "./pokeapi.js";
 import { commandExit } from './cmd_exit.js';
 import { commandHelp } from './cmd_help.js';
 import { commandMap, commandMapb } from "./cmd_map.js";
-import { PokeAPI } from "./pokeapi.js";
+import { commandExplore } from "./cmd_explore.js";
+import { commandCatch } from "./cmd_catch.js";
 
 export type CLICommand = {
   name: string;
   description: string;
-  callback: (state: State) => Promise<void>;
+  callback: (state: State, ...args: string[]) => Promise<void>;
 }
 
 export type State = {
@@ -57,6 +59,16 @@ export function getCommands(): Record<string, CLICommand> {
       description: "List previous 20 location areas",
       callback: commandMapb,
     },
+    explore: {
+      name: "explore <location area name>",
+      description: "Find pokemons in given location area",
+      callback: commandExplore,
+    },
+    // catch: {
+    //   name: "catch <Pokemon name>",
+    //   description: "Try to catch a given pokemon",
+    //   callback: commandCatch,
+    // },
     // can add more commands here
   };
 }
