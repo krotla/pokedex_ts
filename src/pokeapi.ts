@@ -17,10 +17,10 @@ export class PokeAPI {
         return await this.getFetchedOrCached<Location>(url);
     }
 
-    // async fetchPokemon(pokemonName: string): Promise<Pokemon> {
-    //     const url = PokeAPI.baseURL + "/pokemon/" + pokemonName;
-    //     return await this.getFetchedOrCached<Pokemon>(url);
-    // }
+    async fetchPokemon(pokemonName: string): Promise<Pokemon> {
+        const url = PokeAPI.baseURL + "/pokemon/" + pokemonName;
+        return await this.getFetchedOrCached<Pokemon>(url);
+    }
 
     async getFetchedOrCached<T>(url: string) {
         const cashedPage = this.cache.get(url)
@@ -57,5 +57,5 @@ export type Location = {
 
 export type Pokemon = {
     name: string;
-    // base_experience: number;
+    base_experience: number;
 };
