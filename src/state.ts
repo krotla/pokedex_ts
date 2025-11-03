@@ -5,6 +5,7 @@ import { commandHelp } from './cmd_help.js';
 import { commandMap, commandMapb } from "./cmd_map.js";
 import { commandExplore } from "./cmd_explore.js";
 import { commandCatch } from "./cmd_catch.js";
+import { commandInspect } from "./cmd_inspect.js";
 
 export type CLICommand = {
   name: string;
@@ -71,6 +72,11 @@ export function getCommands(): Record<string, CLICommand> {
       name: "catch <Pokemon name>",
       description: "Try to catch a given pokemon",
       callback: commandCatch,
+    },
+    inspect: {
+      name: "inspect <Pokemon name>",
+      description: "Get info about caught pokemon",
+      callback: commandInspect,
     },
     // can add more commands here
   };

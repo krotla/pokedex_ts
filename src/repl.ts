@@ -16,7 +16,7 @@ export async function startREPL(state: State) {
 
         const cmd = state.commands[commandName];
         if (!cmd) {
-            console.log(`Unknown command: "${commandName}". Type "help" for alist of available commands.`);
+            console.log(`Unknown command: "${commandName}". Type "help" for a list of available commands.`);
             state.readline.prompt();
             return;
         }
